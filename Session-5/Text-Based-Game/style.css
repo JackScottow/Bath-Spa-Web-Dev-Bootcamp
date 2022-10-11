@@ -1,0 +1,70 @@
+/* CSS HEX */
+/* --seal-brown: #582f0eff;
+--russet: #7f4f24ff;
+--coyote-brown: #936639ff;
+--camel: #a68a64ff;
+--khaki-web: #b6ad90ff;
+--laurel-green: #c2c5aaff;
+--laurel-green-2: #a4ac86ff;
+--dark-olive-green: #656d4aff;
+--rifle-green: #414833ff;
+--kombu-green: #333d29ff; */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #a4ac86;
+  color: #b6ad90;
+}
+
+.text-box {
+  background-color: #c2c5aa;
+  color: #582f0e;
+  width: 250px;
+  padding: 20px;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+#sign-up {
+  background-color: #414833;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 40%;
+  margin: 25vh auto;
+  text-align: center;
+}
+
+select {
+  font-size: 1.5rem;
+  background-color: #c2c5aa;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: #582f0e;
+  font-weight: 600;
+  text-align: center;
+}
+
+label {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.button {
+  color: #582f0e;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+}
