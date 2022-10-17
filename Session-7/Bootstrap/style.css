@@ -1,0 +1,15 @@
+.card:hover {
+  box-shadow: 0px 0px 5px 1px darkgrey;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  color: black;
+}

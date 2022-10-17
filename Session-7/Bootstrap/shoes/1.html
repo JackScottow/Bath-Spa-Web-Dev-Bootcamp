@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="display-1 text-center">Checkout</h1>
+    </div>
+
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-sm-8">
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="name">Name: </label>
+              <input class="form-control" name="name" type="text" placeholder="Name" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email">Email: </label>
+              <input class="form-control" name="name" type="email" placeholder="Email" />
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="select-size">Select Size:</label>
+              <select class="form-select" name="select-size">
+                <option selected value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main St" />
+            </div>
+            <h4 class="mb-3">Payment</h4>
+
+            <div class="my-3">
+              <div class="form-check">
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked />
+                <label class="form-check-label" for="credit">Credit card</label>
+              </div>
+              <div class="form-check">
+                <input id="debit" name="paymentMethod" type="radio" class="form-check-input" />
+                <label class="form-check-label" for="debit">Debit card</label>
+              </div>
+              <div class="form-check">
+                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" />
+                <label class="form-check-label" for="paypal">PayPal</label>
+              </div>
+            </div>
+
+            <button class="w-100 btn btn-primary btn-lg mb-3" type="submit">Checkout</button>
+            <a class="btn btn-primary btn-lg" href="javascript:history.back()" role="button">Go Back</a>
+          </form>
+        </div>
+        <div class="col-sm-4">
+          <div class="card w-75 mx-auto">
+            <img src="../img/1.webp" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <a href="../img/1.webp" class="stretched-link" target="_blank"
+                ><p class="card-text text-center">adidas Originals ZX 750</p></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
