@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: grey;
+}
+
+.container {
+  background-color: black;
+  border: 5px solid black;
+  margin: auto auto;
+  width: 75vw;
+  height: 75vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.5fr 3fr 0.5fr;
+  grid-template-rows: 2.5fr 1fr 0.5fr 2.5fr 2fr;
+  gap: 10px 5px;
+}
+
+.a {
+  background-color: aqua;
+}
+
+.b {
+  background-color: black;
+}
+
+.c {
+  background-color: blue;
+}
+
+.d {
+  background-color: blueviolet;
+}
+
+.e {
+  background-color: coral;
+}
+
+.f {
+  background-color: darkgreen;
+}
+
+.g {
+  background-color: darkmagenta;
+}
+
+.h {
+  background-color: darkorange;
+}
+
+.i {
+  background-color: darkslateblue;
+}
+
+.j {
+  background-color: deepskyblue;
+}
+
+.k {
+  background-color: darkred;
+}
+
+.l {
+  background-color: darkslateblue;
+}
+
+.m {
+  background-color: darkslategrey;
+}
+
+.n {
+  background-color: darkturquoise;
+}
+
+.o {
+  background-color: darkviolet;
+}
+
+.p {
+  background-color: dodgerblue;
+}
+
+.q {
+  background-color: firebrick;
+}
+
+.r {
+  background-color: forestgreen;
+}
+
+.s {
+  background-color: fuchsia;
+}
+
+.t {
+  background-color: gold;
+}
+
+.u {
+  background-color: green;
+}
+
+.v {
+  background-color: greenyellow;
+}
+
+.w {
+  background-color: hotpink;
+}
+
+.x {
+  background-color: olive;
+}
+
+.y {
+  background-color: plum;
+}
