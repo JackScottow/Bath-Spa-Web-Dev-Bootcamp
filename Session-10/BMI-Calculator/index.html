@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>BMI Converter (Calculator :D)</h1>
+      <form>
+        <label for="height">Height (CM)</label>
+        <input class="height" type="number" name="height" value="170" /><br /><br />
+        <label for="weight">Weight (KG)</label>
+        <input class="weight" type="number" name="weight" value="100" />
+      </form>
+      <button onclick="calculate()">Calculate</button>
+      <br />
+      <h2 class="result">Your BMI is ____</h2>
+      <p class="advice"></p>
+      <script src="script.js"></script>
+    </div>
+  </body>
+</html>
