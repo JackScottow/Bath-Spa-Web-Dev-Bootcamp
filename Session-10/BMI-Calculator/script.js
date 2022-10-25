@@ -10,7 +10,7 @@ var BMI,
 function calculate() {
   height = userHeight.value / 100; // Convert height from cm to m
   weight = userWeight.value;
-  BMI = (weight / height ** 2).toFixed(1); // Round to 2 decimal places
+  BMI = (weight / height ** 2).toFixed(1); // Round to 1 decimal places
   calculateAdvice();
   result.innerText = "Your BMI is " + BMI;
   adviceText.innerText = advice;
