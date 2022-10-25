@@ -14,9 +14,18 @@
         <label for="height">Height (CM)</label>
         <input id="height" type="number" name="height" value="170" /><br /><br />
         <label for="weight">Weight (KG)</label>
-        <input id="weight" type="number" name="weight" value="100" />
+        <input
+          id="weight"
+          type="range"
+          name="weight"
+          value="100"
+          max="150"
+          oninput="this.nextElementSibling.value =
+        this.value + 'KG'"
+        /><output>100KG</output>
       </form>
       <button onclick="calculate()">Calculate</button>
+      <!-- Change to .addEventListener?? -->
       <br />
       <h2 id="result">Your BMI is ____</h2>
       <p id="advice"></p>

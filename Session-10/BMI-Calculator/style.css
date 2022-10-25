@@ -54,3 +54,8 @@ button:hover {
 button:active {
   transform: translateY(+1px);
 }
+
+#weight,
+#height {
+  width: 45%;
+}
