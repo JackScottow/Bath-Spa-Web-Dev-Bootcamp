@@ -1,7 +1,7 @@
-var userHeight = document.querySelector(".height");
-var userWeight = document.querySelector(".weight");
-var result = document.querySelector(".result");
-var adviceText = document.querySelector(".advice");
+var userHeight = document.getElementById("height");
+var userWeight = document.getElementById("weight");
+var result = document.getElementById("result");
+var adviceText = document.getElementById("advice");
 var BMI,
   height,
   weight,
