@@ -1,13 +1,28 @@
-let a = document.getElementById("firstNum").value;
-let b = document.getElementById("secondNum").value;
+let a = document.getElementById("firstNum");
+let b = document.getElementById("secondNum");
 let addButton = document.getElementById("add");
+let subtractButton = document.getElementById("subtract");
+let multiplyButton = document.getElementById("multiply");
+let divideButton = document.getElementById("divide");
 let result = document.getElementById("result");
-let a2, b2, result2;
+let x;
 
 addButton.addEventListener("click", () => {
-  a2 = a;
-  b2 = b;
-  result2 = a2 + b2;
-  console.log(result2);
-  result.innerText = result2;
+  x = +a.value + +b.value;
+  result.innerText = x;
+});
+
+subtractButton.addEventListener("click", () => {
+  x = +a.value - +b.value;
+  result.innerText = x;
+});
+
+multiplyButton.addEventListener("click", () => {
+  x = +a.value * +b.value;
+  result.innerText = x;
+});
+
+divideButton.addEventListener("click", () => {
+  x = +a.value / +b.value;
+  result.innerText = x;
 });

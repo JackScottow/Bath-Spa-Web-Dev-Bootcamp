@@ -2,6 +2,7 @@ var listArr = [];
 // var item = document.getElementById("inputItem").value;
 var addButton = document.getElementById("shop-add");
 var clearButton = document.getElementById("clear-list");
+var removeLastButton = document.getElementById("remove-last");
 var list = document.getElementById("list");
 
 addButton.addEventListener("click", () => {
@@ -20,4 +21,12 @@ addButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
   listArr = [];
   list.innerHTML = "";
+});
+
+removeLastButton.addEventListener("click", () => {
+  listArr.pop(listArr[listArr.length - 1]);
+  list.innerHTML = "";
+  for (i = 0; i < listArr.length; i++) {
+    list.innerHTML += "<p>" + listArr[i] + "</p>";
+  }
 });

@@ -1,8 +1,39 @@
 * {
+  margin: 0.5rem;
+  padding: 0.5rem;
   font-size: 1.5rem;
+}
+
+body {
+  background-color: grey;
+}
+.container {
+  width: 40vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+input {
+  display: flex;
+  width: 10rem;
+  text-align: center;
 }
 
 button {
   width: 5rem;
   height: 5rem;
+  font-size: 2rem;
+}
+
+#result {
+  margin: 0;
+  padding: 0;
+  text-decoration: underline;
+  font-weight: 600;
 }
