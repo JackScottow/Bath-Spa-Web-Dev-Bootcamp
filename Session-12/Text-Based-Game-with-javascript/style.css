@@ -1,0 +1,100 @@
+/* CSS HEX */
+/* --seal-brown: #582f0eff;
+--russet: #7f4f24ff;
+--coyote-brown: #936639ff;
+--camel: #a68a64ff;
+--khaki-web: #b6ad90ff;
+--laurel-green: #c2c5aaff;
+--laurel-green-2: #a4ac86ff;
+--dark-olive-green: #656d4aff;
+--rifle-green: #414833ff;
+--kombu-green: #333d29ff; */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #a4ac86;
+  color: white;
+}
+
+.text-box {
+  background-color: #c2c5aa;
+  color: #582f0e;
+  width: 250px;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+h1 {
+  margin: 0;
+  padding: 0.5rem;
+  text-decoration: underline;
+}
+.container {
+  background-color: #414833;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 1rem;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+select,
+option {
+  font-size: 1.5rem;
+  background-color: #c2c5aa;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  color: #582f0e;
+  font-weight: 600;
+  text-align: center;
+}
+
+label {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.button,
+button {
+  color: #582f0e;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  background-color: #c2c5aa;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  box-shadow: black 0 0px 0px 0;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+.button:hover,
+button:hover {
+  background-color: #a4ac86;
+  color: #333d29;
+  cursor: pointer;
+}
+
+.button:active,
+button:hover {
+  box-shadow: 0px 0px 5px 0px #000000;
+}
+img {
+  width: 100%;
+  border: 1px solid black;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+.hide {
+  display: none;
+}
