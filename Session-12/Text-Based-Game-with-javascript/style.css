@@ -9,10 +9,14 @@
 --dark-olive-green: #656d4aff;
 --rifle-green: #414833ff;
 --kombu-green: #333d29ff; */
-
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+}
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #a4ac86;
+  background-color: black;
   color: white;
 }
 
@@ -22,79 +26,65 @@ body {
   width: 250px;
   padding: 0.25rem;
   border-radius: 0.25rem;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
 }
 h1 {
-  margin: 0;
-  padding: 0.5rem;
   text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  padding-bottom: 1rem;
 }
 .container {
-  background-color: #414833;
-  font-size: 1.5rem;
+  background-color: #334622;
   border: 1px solid black;
-  border-radius: 2rem;
+  border-radius: 1rem;
+  max-width: 40vw;
   padding: 1rem;
-  width: 40%;
-  margin: 0 auto;
+  margin: 1rem auto;
   text-align: center;
 }
 
-select,
-option {
-  font-size: 1.5rem;
-  background-color: #c2c5aa;
-  border: 1px solid black;
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  color: #582f0e;
-  font-weight: 600;
-  text-align: center;
-}
-
-label {
-  font-size: 1.75rem;
-  font-weight: 600;
-}
-
-.button,
 button {
-  color: #582f0e;
-  font-size: 1rem;
-  font-weight: 800;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.1rem;
   background-color: #c2c5aa;
   border: 1px solid black;
   border-radius: 0.25rem;
   box-shadow: black 0 0px 0px 0;
   box-sizing: border-box;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  cursor: pointer;
-}
-.button:hover,
-button:hover {
-  background-color: #a4ac86;
-  color: #333d29;
+  padding: 0.5rem;
+  margin: 1rem 1rem 1rem;
   cursor: pointer;
 }
 
-.button:active,
 button:hover {
+  background-color: #a4ac86;
+  cursor: pointer;
   box-shadow: 0px 0px 5px 0px #000000;
 }
+
+button:active {
+  transform: translateY(+1px);
+}
+
 img {
-  width: 100%;
-  border: 1px solid black;
+  max-width: 80%;
+  border: 0.1rem solid black;
 }
 
 p {
-  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 1.25rem;
 }
 
-.hide {
-  display: none;
+.charName {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: underline;
 }
