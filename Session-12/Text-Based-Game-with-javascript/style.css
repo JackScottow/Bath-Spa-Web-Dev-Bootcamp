@@ -4,7 +4,7 @@
 --coyote-brown: #936639ff;
 --camel: #a68a64ff;
 --khaki-web: #b6ad90ff;
---laurel-green: #c2c5aaff;
+--laurel-green: #DAD7CDff;
 --laurel-green-2: #a4ac86ff;
 --dark-olive-green: #656d4aff;
 --rifle-green: #414833ff;
@@ -21,7 +21,7 @@ body {
 }
 
 .text-box {
-  background-color: #c2c5aa;
+  background-color: #dad7cd;
   color: #582f0e;
   width: 250px;
   padding: 0.25rem;
@@ -36,13 +36,14 @@ h1 {
   padding-bottom: 1rem;
 }
 .container {
-  background-color: #334622;
+  background-color: #3a5a40;
   border: 1px solid black;
   border-radius: 1rem;
   max-width: 40vw;
-  padding: 1rem;
+  padding: 0rem;
   margin: 1rem auto;
   text-align: center;
+  box-shadow: 0px 0px 200px 5px rgba(35, 35, 35, 0.5);
 }
 
 button {
@@ -51,7 +52,7 @@ button {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  background-color: #c2c5aa;
+  background-color: #dad7cd;
   border: 1px solid black;
   border-radius: 0.25rem;
   box-shadow: black 0 0px 0px 0;
@@ -87,4 +88,11 @@ p {
   font-weight: 600;
   font-size: 1.5rem;
   text-decoration: underline;
+}
+
+.bottom {
+  width: 100%;
+  background-color: #588157;
+  border-radius: 0 0 1rem 1rem;
+  border-top: 1px solid #dad7cd;
 }
