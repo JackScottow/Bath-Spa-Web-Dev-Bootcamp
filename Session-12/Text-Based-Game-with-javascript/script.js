@@ -132,26 +132,26 @@ start.addEventListener("click", () => {
   }
 });
 
-var advanceTo = function (s) {
+function advanceTo(s) {
   changeTitle(s.title);
   changeImage(s.image);
   changeText(s.text);
   changeButtons(s.buttons);
-};
+}
 
-var changeTitle = function (header) {
+function changeTitle(header) {
   title.innerHTML = "&nbsp" + header + "&nbsp";
-};
+}
 
-var changeText = function (words) {
+function changeText(words) {
   text.innerHTML = words.replace("charName", "<span class='charName'>" + charName + "</span>");
-};
+}
 
-var changeImage = function (img) {
+function changeImage(img) {
   image.setAttribute("src", img);
-};
+}
 
-var changeButtons = function (buttonList) {
+function changeButtons(buttonList) {
   buttonBox.innerHTML = "";
   if (buttonList.length == 1) {
     buttonBox.innerHTML += "<button onClick=" + buttonList[0][1] + ">" + buttonList[0][0] + "</button>";
@@ -160,4 +160,4 @@ var changeButtons = function (buttonList) {
       buttonBox.innerHTML += "<button onClick=" + buttonList[i][1] + ">" + buttonList[i][0] + "</button>";
     }
   }
-};
+}
