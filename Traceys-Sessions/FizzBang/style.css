@@ -15,3 +15,18 @@
   text-align: center;
   border: 1px solid black;
 }
+
+.fizz {
+  background-color: red;
+  color: white;
+}
+
+.bang {
+  background-color: green;
+  color: white;
+}
+
+.fizzbang {
+  background-color: blue;
+  color: white;
+}
