@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 62.5%;
+}
+
+#container {
+  height: 100vh;
+  font-size: 5rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+#container div {
+  text-align: center;
+  border: 1px solid black;
+}
