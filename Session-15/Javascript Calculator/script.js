@@ -46,11 +46,12 @@ for (let i = 0; i < operators.length; i++) {
         display.innerText = currentVal.slice(0, -1);
       }
       display.innerText += "÷";
-    } else if (operators[i].innerText === "(") {
-      display.innerText += "(";
-    } else if (operators[i].innerText === ")") {
-      display.innerText += ")";
     }
+    // else if (operators[i].innerText === "(") {
+    //   display.innerText += "(";
+    // } else if (operators[i].innerText === ")") {
+    //   display.innerText += ")";
+    // }
   });
 }
 
@@ -70,3 +71,8 @@ deleteX.addEventListener("click", () => {
   var lastVal = currentVal[currentVal.length - 1];
   display.innerText = currentVal.slice(0, -1);
 });
+
+// divide
+// multiply
+// add
+// subtract
