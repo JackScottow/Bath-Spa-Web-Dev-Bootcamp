@@ -71,3 +71,7 @@ body {
   font-size: 10rem;
   font-weight: 200;
 }
+
+.down {
+  background-color: lightgrey;
+}
