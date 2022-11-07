@@ -57,7 +57,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 100%;
-  font-size: 5rem;
+  font-size: 8rem;
   font-weight: 200;
 }
 .operators div {
