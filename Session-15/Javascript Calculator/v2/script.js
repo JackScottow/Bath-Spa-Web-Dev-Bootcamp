@@ -113,7 +113,6 @@ keydownFn = (e) => {
 };
 
 numbers.forEach((number) => {
-  console.log(numbers.innerText);
   var currentVal = display.innerText;
   var lastVal = currentVal[currentVal.length - 1];
   number.addEventListener("click", () => {
