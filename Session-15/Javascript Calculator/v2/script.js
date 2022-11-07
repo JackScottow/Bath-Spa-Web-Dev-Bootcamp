@@ -119,7 +119,6 @@ numbers.forEach((number) => {
     if (number.innerText === "C") {
       clearFn();
     } else if ((number.innerText == ".") & (lastVal == ".")) {
-      console.log(lastVal);
     } else {
       display.innerText += number.innerText;
     }
