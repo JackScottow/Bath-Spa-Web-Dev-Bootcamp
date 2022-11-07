@@ -113,11 +113,13 @@ keydownFn = (e) => {
 };
 
 numbers.forEach((number) => {
-  var currentVal = display.innerText;
-  var lastVal = currentVal[currentVal.length - 1];
   number.addEventListener("click", () => {
+    var currentVal = display.innerText;
+    var lastVal = currentVal[currentVal.length - 1];
     if (number.innerText === "C") {
       clearFn();
+    } else if ((number.innerText == ".") & (lastVal == ".")) {
+      console.log(lastVal);
     } else {
       display.innerText += number.innerText;
     }
