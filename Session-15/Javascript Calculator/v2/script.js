@@ -112,17 +112,18 @@ keydownFn = (e) => {
   }
 };
 
-for (let i = 0; i < numbers.length; i++) {
+numbers.forEach((number) => {
+  console.log(numbers.innerText);
   var currentVal = display.innerText;
   var lastVal = currentVal[currentVal.length - 1];
-  numbers[i].addEventListener("click", () => {
-    if (numbers[i].innerText === "C") {
+  number.addEventListener("click", () => {
+    if (number.innerText === "C") {
       clearFn();
     } else {
-      display.innerText += numbers[i].innerText;
+      display.innerText += number.innerText;
     }
   });
-}
+});
 
 for (let i = 0; i < operators.length; i++) {
   operators[i].addEventListener("click", () => {
