@@ -1,21 +1,22 @@
 var display = document.getElementById("display");
 var numbers = document.querySelectorAll(".numbers div");
-var numbersJumbled = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "."];
 var operators = document.querySelectorAll(".operators div");
 var calculate = document.getElementById("calculate");
 var deleteX = document.getElementById("delete");
 var clear = document.getElementById("clear");
+var copy = document.getElementById("copy");
 var op = ["+", "-", "×", "÷"];
 var opKeys = ["+", "-", "*", "/"];
-var keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
+var keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+var numbersJumbled = ["7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "."];
 
 clearFn = () => {
   display.setAttribute("style", "text-align:center; color:red; padding:0");
-  display.innerText = "* * * * * *";
+  display.innerText = "* * * * *";
   setTimeout(function () {
     display.setAttribute("style", "text-align:left");
     display.innerText = "";
-  }, 100);
+  }, 250);
 };
 
 deleteFn = () => {
@@ -23,7 +24,21 @@ deleteFn = () => {
   display.innerText = currentVal.slice(0, -1);
 };
 
-calculateFn = function () {
+copyFn = () => {
+  if (display.innerText != "Copied!") {
+    var copyTemp = display.innerText;
+    window.getSelection().selectAllChildren(display);
+    document.execCommand("copy");
+    display.setAttribute("style", "text-align:center; color:red; padding:0");
+    display.innerText = "Copied!";
+    setTimeout(function () {
+      display.setAttribute("style", "text-align:left");
+      display.innerText = copyTemp;
+    }, 500);
+  }
+};
+
+calculateFn = () => {
   var inputString = display.innerText;
   var numberArr = inputString.split(/\+|\-|\×|\÷/g);
   var operatorArr = inputString.replace(/[0-9]|\./g, "").split("");
@@ -59,17 +74,7 @@ calculateFn = function () {
   display.innerText = numberArr[0];
 };
 
-for (let i = 0; i < numbers.length; i++) {
-  numbers[i].addEventListener("click", () => {
-    if (numbers[i].innerText === "C") {
-      clearFn();
-    } else {
-      display.innerText += numbers[i].innerText;
-    }
-  });
-}
-
-window.addEventListener("keydown", (e) => {
+keydownFn = (e) => {
   var currentVal = display.innerText;
   var lastVal = currentVal[currentVal.length - 1];
   if (keys.includes(e.key)) {
@@ -96,14 +101,28 @@ window.addEventListener("keydown", (e) => {
       calculate.classList.remove("down");
     }, 100);
     calculateFn();
-  } else if (e.key == "Escape") {
+  } else if (e.key == "Escape" || e.key == "c") {
     clear.classList.add("down");
     setTimeout(function () {
       clear.classList.remove("down");
     }, 100);
     clearFn();
+  } else if ((e.key == ".") & (lastVal != ".")) {
+    display.innerText += e.key;
   }
-});
+};
+
+for (let i = 0; i < numbers.length; i++) {
+  var currentVal = display.innerText;
+  var lastVal = currentVal[currentVal.length - 1];
+  numbers[i].addEventListener("click", () => {
+    if (numbers[i].innerText === "C") {
+      clearFn();
+    } else {
+      display.innerText += numbers[i].innerText;
+    }
+  });
+}
 
 for (let i = 0; i < operators.length; i++) {
   operators[i].addEventListener("click", () => {
@@ -134,8 +153,13 @@ for (let i = 0; i < operators.length; i++) {
   });
 }
 
+window.addEventListener("keydown", keydownFn);
+
 calculate.addEventListener("click", calculateFn);
 
+deleteX.addEventListener("click", deleteFn);
+
+copy.addEventListener("click", copyFn);
 // calculate.addEventListener("click", () => {
 //   var currentVal = display.innerText;
 //   var lastVal = currentVal[currentVal.length - 1];
@@ -146,8 +170,6 @@ calculate.addEventListener("click", calculateFn);
 //   console.log(displayReplaced);
 //   display.innerText = Function("return " + displayReplaced)();
 // });
-
-deleteX.addEventListener("click", deleteFn);
 
 // divide
 // multiply
