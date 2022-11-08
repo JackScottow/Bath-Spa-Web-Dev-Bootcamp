@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#board {
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#board div {
+  border: 2px solid black;
+  width: 15rem;
+  height: 15rem;
+  background-color: teal;
+}
+
+.cross {
+  background-image: url(./img/cross.png);
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nought {
+  background-image: url(./img/nought.png);
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center;
+}
