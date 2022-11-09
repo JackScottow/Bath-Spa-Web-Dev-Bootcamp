@@ -9,17 +9,21 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Tic Tac Toe!</h1>
-    <div id="board">
-      <div data-x="0" data-y="0"></div>
-      <div data-x="0" data-y="1"></div>
-      <div data-x="0" data-y="2"></div>
-      <div data-x="1" data-y="0"></div>
-      <div data-x="1" data-y="1"></div>
-      <div data-x="1" data-y="2"></div>
-      <div data-x="2" data-y="0"></div>
-      <div data-x="2" data-y="1"></div>
-      <div data-x="2" data-y="2"></div>
+    <div id="start-game"></div>
+    <div id="game">
+      <h1 id="text">X Turn</h1>
+      <div id="board">
+        <div data-x="0"></div>
+        <div data-x="1"></div>
+        <div data-x="2"></div>
+        <div data-x="3"></div>
+        <div data-x="4"></div>
+        <div data-x="5"></div>
+        <div data-x="6"></div>
+        <div data-x="7"></div>
+        <div data-x="8"></div>
+      </div>
+      <button onclick="resetFn()">RESET</button>
     </div>
   </body>
 </html>
