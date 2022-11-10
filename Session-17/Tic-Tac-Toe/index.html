@@ -12,7 +12,11 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div id="start-game"></div>
+    <div id="start-game">
+      <div id="playerOneInput" contenteditable="true">Player One</div>
+      <div id="playerTwoInput" contenteditable="true">Player Two</div>
+      <button id="start-button">Play!</button>
+    </div>
     <div id="game">
       <h1 id="text">X Turn</h1>
       <div id="board">
@@ -26,7 +30,7 @@
         <div data-x="7"></div>
         <div data-x="8"></div>
       </div>
-      <button onclick="resetFn()">RESET</button>
+      <button onclick="reset()">RESET GAME</button>
     </div>
   </body>
 </html>

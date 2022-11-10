@@ -1,9 +1,11 @@
+var playerOneInput = document.querySelector("#playerOneInput");
+var playerTwoInput = document.querySelector("#playerTwoInput");
+var game = document.querySelector("#game");
+var startGame = document.querySelector("#start-game");
 var squares = document.querySelectorAll("#board div");
-var player1 = true;
 var text = document.getElementById("text");
-var arr = [".", ".", ".", ".", ".", ".", ".", ".", "."];
-var noWin = true;
-
+var gameArr = new Array(9).fill(".");
+var startButton = document.querySelector("#start-button");
 const winArr = [
   [0, 1, 2],
   [3, 4, 5],
@@ -14,53 +16,86 @@ const winArr = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+var win = false;
+var winner = "";
+
+const createPlayer = (name, symbol, turn) => {
+  return { name, symbol, turn };
+};
+
+const playerOne = createPlayer("X", "x", true);
+const playerTwo = createPlayer("O", "o", false);
+
+const updateName = () => {
+  playerOne.name = playerOneInput.innerText;
+  playerTwo.name = playerTwoInput.innerText;
+  updateText();
+  startGame.style.display = "none";
+  game.style.display = "flex";
+};
+
+const changeTurn = () => {
+  playerOne.turn === true ? (playerOne.turn = false) : (playerOne.turn = true);
+  playerTwo.turn === true ? (playerTwo.turn = false) : (playerTwo.turn = true);
+};
+
+const updateText = () => {
+  if (win) {
+    text.innerHTML = `${winner} wins!`;
+  } else if (playerOne.turn) {
+    text.innerHTML = `${playerOne.name} (${playerOne.symbol.toUpperCase()})'s Turn`;
+  } else if (playerTwo.turn) {
+    text.innerHTML = `${playerTwo.name} (${playerTwo.symbol.toUpperCase()})'s Turn`;
+  }
+};
+
+const reset = () => {
+  squares.forEach((square) => {
+    square.classList.remove(playerOne.symbol);
+    square.classList.remove(playerTwo.symbol);
+  });
+  win = false;
+  updateText();
+  gameArr.fill(".", 0);
+};
+
+const checkWin = () => {
+  for (let i = 0; i < winArr.length; i++) {
+    if (gameArr[winArr[i][0]] != "." && gameArr[winArr[i][0]] === gameArr[winArr[i][1]] && gameArr[winArr[i][1]] === gameArr[winArr[i][2]]) {
+      winner = gameArr[winArr[i][0]];
+      win = true;
+      updateText();
+    } else if (gameArr.indexOf(".") == -1 && win === false) {
+      text.innerText = "Draw!";
+    }
+  }
+};
 
 squares.forEach((square) => {
   square.addEventListener("click", () => {
     const tileNum = square.dataset.x;
-    if (noWin) {
-      if (player1) {
-        if (arr[tileNum] == ".") {
-          arr[tileNum] = "X";
-          square.classList.add("cross");
-          player1 = false;
-          text.innerHTML = "O Turn";
+    if (!win) {
+      if (playerOne.turn === true) {
+        if (gameArr[tileNum] == ".") {
+          gameArr[tileNum] = playerOne.name;
+          square.classList.add(playerOne.symbol);
+          changeTurn();
+          updateText();
           checkWin();
-        } else {
-          window.alert("No!");
         }
       } else {
-        if (arr[tileNum] == ".") {
-          arr[tileNum] = "O";
-          square.classList.add("nought");
-          player1 = true;
-          text.innerHTML = "X Turn";
+        if (gameArr[tileNum] == ".") {
+          gameArr[tileNum] = playerTwo.name;
+          square.classList.add(playerTwo.symbol);
+          changeTurn();
+          updateText();
           checkWin();
-        } else {
-          window.alert("No!");
         }
       }
     }
   });
 });
 
-const checkWin = () => {
-  for (let i = 0; i < winArr.length; i++) {
-    if (arr[winArr[i][0]] != "." && arr[winArr[i][0]] === arr[winArr[i][1]] && arr[winArr[i][1]] === arr[winArr[i][2]]) {
-      text.innerText = `${arr[winArr[i][0]]} Wins!`;
-      noWin = false;
-    } else if (arr.indexOf(".") == -1 && noWin == true) {
-      text.innerText = "Draw!";
-    }
-  }
-};
-
-const resetFn = () => {
-  squares.forEach((square) => {
-    square.classList.remove("cross");
-    square.classList.remove("nought");
-  });
-  text.innerHTML = "X Turn";
-  noWin = true;
-  arr = [".", ".", ".", ".", ".", ".", ".", ".", "."];
-};
+startButton.addEventListener("click", () => {
+  updateName();
+});
