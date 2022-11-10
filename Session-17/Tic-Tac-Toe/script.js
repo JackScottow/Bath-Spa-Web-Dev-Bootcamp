@@ -3,9 +3,10 @@ var playerTwoInput = document.querySelector("#playerTwoInput");
 var game = document.querySelector("#game");
 var startGame = document.querySelector("#start-game");
 var squares = document.querySelectorAll("#board div");
-var text = document.getElementById("text");
+var gameText = document.getElementById("game-text");
 var gameArr = new Array(9).fill(".");
 var startButton = document.querySelector("#start-button");
+var resetButton = document.querySelector("#reset");
 const winArr = [
   [0, 1, 2],
   [3, 4, 5],
@@ -41,11 +42,11 @@ const changeTurn = () => {
 
 const updateText = () => {
   if (win) {
-    text.innerHTML = `${winner} wins!`;
+    gameText.innerHTML = `${winner} wins!`;
   } else if (playerOne.turn) {
-    text.innerHTML = `${playerOne.name} (${playerOne.symbol.toUpperCase()})'s Turn`;
+    gameText.innerHTML = `${playerOne.name} (${playerOne.symbol.toUpperCase()})'s Turn`;
   } else if (playerTwo.turn) {
-    text.innerHTML = `${playerTwo.name} (${playerTwo.symbol.toUpperCase()})'s Turn`;
+    gameText.innerHTML = `${playerTwo.name} (${playerTwo.symbol.toUpperCase()})'s Turn`;
   }
 };
 
@@ -57,6 +58,8 @@ const reset = () => {
   win = false;
   updateText();
   gameArr.fill(".", 0);
+  startGame.style.display = "flex";
+  game.style.display = "none";
 };
 
 const checkWin = () => {
@@ -66,7 +69,7 @@ const checkWin = () => {
       win = true;
       updateText();
     } else if (gameArr.indexOf(".") == -1 && win === false) {
-      text.innerText = "Draw!";
+      gameText.innerText = "Draw!";
     }
   }
 };
@@ -98,4 +101,8 @@ squares.forEach((square) => {
 
 startButton.addEventListener("click", () => {
   updateName();
+});
+
+resetButton.addEventListener("click", () => {
+  reset();
 });

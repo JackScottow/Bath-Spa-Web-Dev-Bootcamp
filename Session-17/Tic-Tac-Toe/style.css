@@ -19,7 +19,8 @@ body {
   margin: auto;
 }
 
-#start-game > * {
+#start-game > *,
+#reset {
   color: white;
   padding: 1rem;
   margin: 1rem;
@@ -30,7 +31,8 @@ body {
   cursor: default;
 }
 
-#start-game button {
+#start-game button,
+#reset {
   cursor: pointer;
 }
 
@@ -57,7 +59,7 @@ body {
 #board div {
   box-shadow: rgba(255, 255, 255, 0.203) 0px 2px 8px 0px;
   border-radius: 1rem;
-  width: 30vmin;
+  width: 25vmin;
   aspect-ratio: 1/1;
   background-color: rgb(0, 135, 135);
   cursor: pointer;
