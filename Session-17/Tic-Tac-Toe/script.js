@@ -49,7 +49,7 @@ const checkWin = () => {
     if (arr[winArr[i][0]] != "." && arr[winArr[i][0]] === arr[winArr[i][1]] && arr[winArr[i][1]] === arr[winArr[i][2]]) {
       text.innerText = `${arr[winArr[i][0]]} Wins!`;
       noWin = false;
-    } else if (arr.indexOf(".") == -1) {
+    } else if (arr.indexOf(".") == -1 && noWin == true) {
       text.innerText = "Draw!";
     }
   }

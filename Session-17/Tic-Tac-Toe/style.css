@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "roboto";
 }
 
 body {
@@ -17,7 +18,9 @@ body {
 }
 
 #game h1 {
-  margin: 2rem;
+  text-transform: uppercase;
+  margin: 1rem;
+  font-weight: 700;
 }
 #board {
   height: fit-content;
@@ -25,32 +28,35 @@ body {
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
+  gap: 0.5rem;
+  border: 0.5rem solid black;
 }
 
 #board div {
+  box-shadow: rgba(255, 255, 255, 0.203) 0px 2px 8px 0px;
   border-radius: 1rem;
-  border: 0.2rem solid black;
-  height: 15rem;
+  width: 30vmin;
   aspect-ratio: 1/1;
   background-color: rgb(0, 135, 135);
   cursor: pointer;
 }
 
-#board div:hover {
+#board div:hover,
+#board div:active {
   background-color: rgb(0, 85, 85);
 }
 
 .cross {
   background-image: url(./img/cross.svg);
-  background-size: 10rem;
+  background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .nought {
   background-image: url(./img/nought.svg);
-  background-size: 10rem;
+  background-size: 85%;
   background-repeat: no-repeat;
   background-position: center;
 }
