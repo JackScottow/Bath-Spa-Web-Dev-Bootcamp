@@ -1,6 +1,7 @@
 import "./App.css";
 import Postcard from "./Components/Postcard";
 import { useState } from "react";
+import Button from "./Components/Button";
 
 function App() {
   const [darkmode, setDarkmode] = useState(false);
@@ -11,7 +12,10 @@ function App() {
 
   return (
     <div className={`App${darkmode ? " darkmode" : ""}`}>
-      <button onClick={toggleDarkmode}>{`Change to ${darkmode ? "Light Mode" : "Dark Mode"}`}</button>
+      <br />
+      <Button padding="1rem" bgColor="grey" textColor="black" borderRad=".5rem" fontSize="3rem" onClick={toggleDarkmode}>
+        {`Change to ${darkmode ? "Light Mode" : "Dark Mode"}`}
+      </Button>
 
       <Postcard imageSrc={require("./Components/img/taj-mahal.jpg")} title="Taj Mahal" text="From India with love!" isDarkmode={darkmode} />
 
