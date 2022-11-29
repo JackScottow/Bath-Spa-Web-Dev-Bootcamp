@@ -18,6 +18,7 @@ html {
 
 .postcard {
   background-color: rgb(225, 225, 225);
+  color: black;
   width: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,6 +27,16 @@ html {
   border-radius: 0.5rem;
   margin: 1rem;
 }
+
+.App.darkmode {
+  background-color: #111;
+}
+
+.postcard.darkmode {
+  background-color: #444;
+  color: white;
+}
+
 .postcard__text {
   margin: auto;
   font-size: 3rem;
@@ -34,11 +45,14 @@ html {
 .postcard__text h2 {
   margin-bottom: 5rem;
 }
-.postcard__image {
-  background-color: rgb(225, 225, 225);
-}
 
 .postcard__image img {
   border: 0.1rem solid black;
   width: 100%;
+}
+
+@media screen and (max-width: 699px) {
+  html {
+    font-size: 25%;
+  }
 }
