@@ -13,8 +13,16 @@ function App() {
   return (
     <div className={`App${darkmode ? " darkmode" : ""}`}>
       <br />
-      <Button padding="1rem" bgColor="grey" textColor="black" borderRad=".5rem" fontSize="3rem" onClick={toggleDarkmode}>
-        {`Change to ${darkmode ? "Light Mode" : "Dark Mode"}`}
+      <Button
+        padding="1rem"
+        bgColor={darkmode ? "#111" : "#FFF"}
+        textColor={darkmode ? "#FFF" : "#111"}
+        border={darkmode ? "1px solid white" : "1px solid #111"}
+        borderRad=".5rem"
+        fontSize="3rem"
+        onClick={toggleDarkmode}
+      >
+        {`${darkmode ? "Light Mode" : "Dark Mode"}`}
       </Button>
 
       <Postcard imageSrc={require("./Components/img/taj-mahal.jpg")} title="Taj Mahal" text="From India with love!" isDarkmode={darkmode} />
