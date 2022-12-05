@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 10 forms</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--
+        Name - Text
+        Date - date
+        Number of people - Select(Dropdown)
+        Tel - Tel
+        dietry requirements - checkbox - other please specify
+        Kids - checkbox
+        inside outside - radio
+        Comments - text
+     -->
+
+    <div class="form-container">
+      <h1>Booking form</h1>
+      <form id="booking form">
+        <!-- Name input -->
+        <div class="form-row">
+          <label for="name">Your Name</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <!-- Date input -->
+        <div class="form-row">
+          <label for="date">Date</label>
+          <input type="date" id="booking-date" name="booking-date" value="" min="" max="" />
+        </div>
+        <!-- # of People input -->
+        <div class="form-row">
+          <label for="numberOfPeople">Number of People</label>
+          <select id="numberOfPeople" name="numberOfPeople">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="0">10+</option>
+          </select>
+        </div>
+        <!-- Telephone input -->
+        <div class="form-row">
+          <label for="tel">Telephone</label>
+          <input type="tel" name="tel" id="tel" />
+        </div>
+        <!-- Dietry requirements input -->
+        <div class="form-row">
+          <label for="gluten">Gluten Free</label>
+          <input type="checkbox" id="gluten" value="gluten" />
+          <label for="dairy">Dairy Free</label>
+          <input type="checkbox" id="dairy" value="dairy" />
+          <label for="nuts">Nut allergy</label>
+          <input type="checkbox" id="nuts" value="nuts" />
+          <label for="vegan">Vegan</label>
+          <input type="checkbox" id="vegan" value="vegan" />
+          <label for="other">Other</label>
+          <input type="checkbox" id="other" value="other" />
+        </div>
+        <!-- Other dietry requirements input -->
+        <div class="form-row otherDiet hide">
+          <label for="other-dietry-requirements">Other Dietry Requirements</label>
+          <input type="text" name="other-dietry-requirements" id="other-dietry-requirements" />
+        </div>
+        <!-- Inside/Outside -->
+        <div class="form-row">
+          <label for="inside">Inside</label>
+          <input type="radio" id="inside" name="inside/outside" value="inside" />
+          <label for="outside">Outside</label>
+          <input type="radio" id="outside" name="inside/outside" value="outside" />
+        </div>
+        <!-- Kids? -->
+        <div class="form-row">
+          <label for="kids">Childrens Menu Required</label>
+          <input type="checkbox" name="kids" id="kids" />
+        </div>
+        <!-- Other comments -->
+        <div class="form-row">
+          <label for="other-comments">Other Comments</label>
+          <input type="text" name="other-comments" id="other-comments" />
+        </div>
+        <button type="submit" id="submit-form">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
