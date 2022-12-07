@@ -1,5 +1,5 @@
 .form-container {
-  width: 100vw;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,4 +9,8 @@
   margin: 1rem 0;
   display: flex;
   justify-content: space-between;
+}
+
+.booking-results p {
+  margin: 0;
 }

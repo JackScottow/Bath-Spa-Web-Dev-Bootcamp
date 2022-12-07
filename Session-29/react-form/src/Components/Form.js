@@ -5,13 +5,18 @@ const Form = () => {
   const currentDate = new Date().toISOString().substring(0, 10);
   const maxDate = new Date(new Date().setMonth(new Date().getMonth() + 1)).toISOString().substring(0, 10);
   const [formData, setFormData] = useState({
-    name: "",
+    name: null,
     bookingDate: currentDate,
-    numOfPeople: "",
-    telNumber: "",
-    otherDietReqs: "",
-    inOut: "",
+    numOfPeople: "1",
+    telNumber: null,
+    otherDietReqs: false,
+    inOut: "inside",
     kids: false,
+    gluten: false,
+    dairy: false,
+    nuts: false,
+    vegan: false,
+    otherComments: false,
   });
 
   const handleChange = (e) => {
@@ -22,14 +27,16 @@ const Form = () => {
         [name]: type === "checkbox" ? checked : value,
       };
     });
-
-    console.log(formData);
   };
   const [submited, setSubmited] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmited(true);
+    if (formData.name && formData.telNumber) {
+      setSubmited(true);
+    } else {
+      window.alert("Please enter a name and phone number");
+    }
   };
   return (
     <div>
@@ -86,8 +93,6 @@ const Form = () => {
             <input type="checkbox" name="nuts" id="nuts" value="nuts" onChange={handleChange} />
             <label htmlFor="vegan">Vegan</label>
             <input type="checkbox" name="vegan" id="vegan" value="vegan" onChange={handleChange} />
-            <label htmlFor="other">Other</label>
-            <input type="checkbox" name="other" id="other" value="other" onChange={handleChange} />
           </div>
           {/* <!-- Other dietry requirements input --> */}
           <div className="form-row otherDiet hide">
@@ -108,15 +113,32 @@ const Form = () => {
           </div>
           {/* <!-- Other comments --> */}
           <div className="form-row">
-            <label htmlFor="other-comments">Other Comments</label>
-            <input type="text" name="other-comments" id="other-comments" />
+            <label htmlFor="otherComments">Other Comments</label>
+            <input type="text" name="otherComments" id="otherComments" onChange={handleChange} />
           </div>
           <button type="submit" id="submit-form" onClick={handleSubmit}>
             Submit
           </button>
         </form>
+        {submited ? (
+          <div className="booking-results">
+            <p>Name : {formData.name}</p>
+            <p>Booking Date : {formData.bookingDate}</p>
+            <p>Party Size : {formData.numOfPeople}</p>
+            <p>Telephone : {formData.telNumber}</p>
+            {formData.gluten ? <p>Gluten Free</p> : ""}
+            {formData.dairy ? <p>Dairy Free</p> : ""}
+            {formData.nuts ? <p>Nut allergy</p> : ""}
+            {formData.vegan ? <p>Vegan</p> : ""}
+            {formData.otherDietReqs ? <p>{formData.otherDietReqs}</p> : ""}
+            {formData.inOut === "inside" ? <p>Eat Inside</p> : <p>Eat Outside</p>}
+            {formData.kids ? <p>Kids Menu Required</p> : ""}
+            {formData.otherComments ? <p>{formData.otherComments}</p> : ""}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
-      {submited ? Object.entries(formData) : <p>No results</p>}
     </div>
   );
 };
