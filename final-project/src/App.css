@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.nav-list {
+  margin: 0;
+  padding: 0;
+  background-color: #888;
+}
+
+.nav-list li {
+  display: inline-block;
+}
+
+.nav-list li a {
+  font-size: 2rem;
+  display: block;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  background-color: #ddd;
+}
+
+footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+footer ul {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  list-style-type: none;
+}
