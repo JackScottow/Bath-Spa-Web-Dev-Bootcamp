@@ -4,9 +4,10 @@ import Product from "./Product";
 const Products = () => {
   var products = [
     {
-      name: "Product 1",
+      name: "Rambo",
       price: 29.99,
-      image: "https://www.product1.com/image.jpg",
+      image:
+        "https://imgv3.fotor.com/images/blog-richtext-image/Image-Upscaler-2.jpg",
     },
     {
       name: "Product 2",
@@ -20,6 +21,15 @@ const Products = () => {
     },
   ];
 
-  return <>Hello</>;
+  return (
+    <div className="products-container">
+      {products.map((item) => (
+        <>
+          <Product name={item.name} price={item.price} src={item.image} />
+          {console.log(item.image)}
+        </>
+      ))}
+    </div>
+  );
 };
 export default Products;

@@ -3,10 +3,12 @@ import React from "react";
 const Product = (props) => {
   return (
     <div className="product">
-      <img src={props.image} alt={props.name} />
+      <div>
+        <img src={props.src} alt={props.name} />
+      </div>
       <h3>{props.name}</h3>
       <p>Price: ${props.price}</p>
-      <button onClick={() => props.addToCart(props.name, props.price)}>Add to Cart</button>
+      {console.log(props)}
     </div>
   );
 };
