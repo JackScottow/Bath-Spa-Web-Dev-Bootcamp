@@ -7,7 +7,9 @@
 html {
   font-size: 62.5%;
 }
-
+body {
+  min-height: 100vh;
+}
 .nav-list {
   margin: 0;
   padding: 0;
@@ -32,7 +34,7 @@ html {
 
 footer {
   width: 100vw;
-  position: absolute;
+
   bottom: 0;
 }
 
@@ -44,7 +46,19 @@ footer ul {
   list-style-type: none;
 }
 
+.products-container {
+  width: 100vw;
+  margin: 5rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5rem;
+  place-items: center;
+}
+
+.product:hover {
+  transition: 0.1s;
+  transform: scale(1.1);
+}
 .product img {
   width: 20rem;
-  height: 20rem;
 }

@@ -7,17 +7,37 @@ const Products = () => {
       name: "Rambo",
       price: 29.99,
       image:
-        "https://imgv3.fotor.com/images/blog-richtext-image/Image-Upscaler-2.jpg",
+        "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeBWbUzMBWOfgItK9m0ogS6CABTqrlH6fiqqx9IDmtmTmN994we7q7wSp4e04OVMbCABqhGAR6USWAxDcyda8yMucoL3T2dLG83KsEY6PPOf7XjmZ-IuZEhbMW_pJ7ZzbpBc0w.jpg?r=6f5",
     },
     {
-      name: "Product 2",
-      price: 39.99,
-      image: "https://www.product2.com/image.jpg",
+      name: "Rambo",
+      price: 29.99,
+      image:
+        "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeBWbUzMBWOfgItK9m0ogS6CABTqrlH6fiqqx9IDmtmTmN994we7q7wSp4e04OVMbCABqhGAR6USWAxDcyda8yMucoL3T2dLG83KsEY6PPOf7XjmZ-IuZEhbMW_pJ7ZzbpBc0w.jpg?r=6f5",
     },
     {
-      name: "Product 3",
-      price: 49.99,
-      image: "https://www.product3.com/image.jpg",
+      name: "Rambo",
+      price: 29.99,
+      image:
+        "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeBWbUzMBWOfgItK9m0ogS6CABTqrlH6fiqqx9IDmtmTmN994we7q7wSp4e04OVMbCABqhGAR6USWAxDcyda8yMucoL3T2dLG83KsEY6PPOf7XjmZ-IuZEhbMW_pJ7ZzbpBc0w.jpg?r=6f5",
+    },
+    {
+      name: "Rambo",
+      price: 29.99,
+      image:
+        "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeBWbUzMBWOfgItK9m0ogS6CABTqrlH6fiqqx9IDmtmTmN994we7q7wSp4e04OVMbCABqhGAR6USWAxDcyda8yMucoL3T2dLG83KsEY6PPOf7XjmZ-IuZEhbMW_pJ7ZzbpBc0w.jpg?r=6f5",
+    },
+    {
+      name: "Rambo",
+      price: 29.99,
+      image:
+        "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeBWbUzMBWOfgItK9m0ogS6CABTqrlH6fiqqx9IDmtmTmN994we7q7wSp4e04OVMbCABqhGAR6USWAxDcyda8yMucoL3T2dLG83KsEY6PPOf7XjmZ-IuZEhbMW_pJ7ZzbpBc0w.jpg?r=6f5",
+    },
+    {
+      name: "Rambo",
+      price: 29.99,
+      image:
+        "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABeBWbUzMBWOfgItK9m0ogS6CABTqrlH6fiqqx9IDmtmTmN994we7q7wSp4e04OVMbCABqhGAR6USWAxDcyda8yMucoL3T2dLG83KsEY6PPOf7XjmZ-IuZEhbMW_pJ7ZzbpBc0w.jpg?r=6f5",
     },
   ];
 
