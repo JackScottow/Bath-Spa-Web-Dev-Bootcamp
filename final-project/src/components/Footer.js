@@ -1,19 +1,35 @@
 import React from "react";
-
+import { faGithub, faInstagram, faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Footer = () => {
   return (
     <footer>
       <ul>
         <li>
-          <a href="https://www.linkedin.com/in/yourname">LinkedIn</a>
+          <a href="https://github.com/JackScottow">
+            <FontAwesomeIcon icon={faGithub} /> GitHub
+          </a>
         </li>
         <li>
-          <a href="https://github.com/yourname">GitHub</a>
+          <a href="https://facebook.com">
+            <FontAwesomeIcon icon={faFacebook} /> Facebook
+          </a>
         </li>
         <li>
-          <a href="https://www.twitter.com/yourname">Twitter</a>
+          <a href="https://instagram.com">
+            <FontAwesomeIcon icon={faInstagram} /> Instagram
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com">
+            <FontAwesomeIcon icon={faTwitter} /> Twitter
+          </a>
         </li>
       </ul>
+      <p>
+        <a href="https://www.yourwebsite.com/privacy-policy">Privacy Policy </a> | <a href="https://www.yourwebsite.com/terms-of-use">Terms of Use</a>
+      </p>
+      <p>Copyright 2022</p>
     </footer>
   );
 };
