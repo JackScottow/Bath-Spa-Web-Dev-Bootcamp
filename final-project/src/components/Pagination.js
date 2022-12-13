@@ -22,8 +22,8 @@ const Pagination = ({ list }) => {
   return (
     <>
       {displayedItems.map((item) => (
-        <Link to={`/movie/${item.id}`} key={item.id}>
-          <Card className="text-center m-4 shadow" key={item.id}>
+        <Link to={`/movie/${item.title.split(" ").join("")}`} key={item.id} state={item.id}>
+          <Card className="text-center m-4 shadow card" key={item.id}>
             <Card.Img
               variant="top"
               src={`https://www.themoviedb.org/t/p/w440_and_h660_face${item.poster_path}`}

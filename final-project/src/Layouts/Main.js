@@ -1,10 +1,10 @@
 import Navigation from "../components/Navigation";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
-const Layout = () => {
+const Layout = ({ basket }) => {
   return (
     <>
-      <Navigation />
+      <Navigation basket={basket} />
       <Outlet />
       <Footer />
     </>

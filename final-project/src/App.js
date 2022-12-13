@@ -1,26 +1,46 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./Css/App.css";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Layout from "./Layouts/Main";
 import Home from "./components/Home";
-import Checkout from "./components/Checkout";
-import React from "react";
 import Contact from "./components/Contact";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Popular from "./components/Popular";
 import Genre from "./components/Genre";
 import Movie from "./components/Movie";
+import Basket from "./components/Basket";
+import Privacy from "./components/Privacy";
 
 function App() {
+  const [cart, setCart] = useState(localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")) : []);
+
+  const onAdd = (product) => {
+    let i = cart.findIndex((e) => e.id === product.id);
+    if (i > -1) {
+      let tempCart = cart;
+      tempCart[i].qty += 1;
+      setCart([...tempCart]);
+    } else {
+      setCart([...cart, { title: product.title, image: product.poster_path, id: product.id, qty: 1, price: 2.99 }]);
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("Cart", JSON.stringify(cart));
+  });
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout basket={cart} />}>
           <Route index element={<Home />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/basket" element={<Basket basket={cart} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/popular" element={<Popular />} />
           <Route path="/genre/:genre" element={<Genre />} />
-          <Route path="/movie/:movie" element={<Movie />} />
+          <Route path="/movie/:movie" element={<Movie onAdd={onAdd} cart={cart} />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Route>
       </Routes>
     </BrowserRouter>
