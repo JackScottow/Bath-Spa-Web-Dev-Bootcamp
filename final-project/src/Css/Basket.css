@@ -53,3 +53,12 @@ button {
   width: 10rem;
   height: 2rem;
 }
+
+.basket-total {
+  text-align: end;
+  padding-right: 1rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  background-color: white;
+}

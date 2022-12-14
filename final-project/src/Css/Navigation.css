@@ -17,3 +17,7 @@
   margin: 0.5rem 0.5rem 0 0.5rem;
   text-align: end;
 }
+
+.dropdown-menu {
+  width: 100%;
+}
