@@ -1,13 +1,16 @@
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
-
 import genreList from "../Data/Genres";
-
+import "../Css/Navigation.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouseChimney, faCartShopping, faVideo, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 function Navigation({ basket }) {
   let basketQty = 0;
+  let basketPrice = 0;
   basket.forEach((item) => {
     basketQty += item.qty;
+    basketPrice += item.qty * item.price;
   });
 
   return (
@@ -17,9 +20,17 @@ function Navigation({ basket }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
             <Nav.Link href="/" className="px-5">
-              Home
+              <FontAwesomeIcon icon={faHouseChimney} />
+              &nbsp;Home
             </Nav.Link>
-            <NavDropdown className="px-5" bg="dark" variant="dark" href="/genres" title="Movies" id="basic-nav-dropdown">
+            <NavDropdown
+              className="px-5"
+              bg="dark"
+              variant="dark"
+              href="/genres"
+              id="basic-nav-dropdown"
+              title={[<FontAwesomeIcon icon={faVideo} />, " Movies"]}
+            >
               <NavDropdown.Item href="/popular" style={{ textAlign: "center" }}>
                 Popular
               </NavDropdown.Item>
@@ -30,28 +41,35 @@ function Navigation({ basket }) {
               ))}
             </NavDropdown>
             <OverlayTrigger
-              trigger="hover"
+              trigger={["hover", "hover"]}
               key="bottom"
               placement="bottom"
               overlay={
                 <Popover id="popover-positioned-top">
-                  <Popover.Header as="h3">Basket</Popover.Header>
                   <Popover.Body>
-                    {basket.map((item) => (
-                      <div>
-                        {item.title} - £{item.price} x {item.qty}
-                      </div>
-                    ))}
+                    {basket.length > 0
+                      ? basket.map((item) => (
+                          <div className="basket-popover">
+                            <div>{item.title}</div>
+                            <div>
+                              £{item.price} x {item.qty}
+                            </div>
+                          </div>
+                        ))
+                      : "Basket is empty"}
+                    <div className="basket-popover-total">Total - £{basketPrice.toFixed(2)}</div>
                   </Popover.Body>
                 </Popover>
               }
             >
               <Nav.Link className="px-5" href="/basket">
-                Basket ({basketQty})
+                <FontAwesomeIcon icon={faCartShopping} />
+                &nbsp; Basket {basketQty > 0 ? `[${basketQty} - £${basketPrice.toFixed(2)}]` : ""}
               </Nav.Link>
             </OverlayTrigger>
             <Nav.Link className="px-5" href="/contact">
-              Contact
+              <FontAwesomeIcon icon={faEnvelope} />
+              &nbsp; Contact
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

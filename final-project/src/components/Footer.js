@@ -27,7 +27,7 @@ const Footer = () => {
         </li>
       </ul>
       <p>
-        <a href="/privacy">Privacy Policy </a> | <a href="https://www.yourwebsite.com/terms-of-use">Terms of Use</a>
+        <a href="/privacy">Privacy Policy </a> | <a href="/termsofuse">Terms of Use</a>
       </p>
       <p>Copyright 2022</p>
     </footer>

@@ -33,3 +33,23 @@ a:hover {
   border-radius: 0.25rem;
   padding-right: 0.5rem;
 }
+.btn {
+  padding: 0;
+}
+button {
+  margin: 0 auto;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1/1;
+}
+
+.qty {
+  text-align: center;
+  width: 2rem;
+}
+
+.empty-basket {
+  width: 10rem;
+  height: 2rem;
+}

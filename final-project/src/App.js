@@ -11,6 +11,7 @@ import Genre from "./components/Genre";
 import Movie from "./components/Movie";
 import Basket from "./components/Basket";
 import Privacy from "./components/Privacy";
+import Terms from "./components/Terms";
 
 function App() {
   const [cart, setCart] = useState(localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")) : []);
@@ -26,6 +27,29 @@ function App() {
     }
   };
 
+  const plusQty = (product) => {
+    let i = cart.findIndex((e) => e.id === product.id);
+    let tempCart = cart;
+    tempCart[i].qty += 1;
+    setCart([...tempCart]);
+  };
+
+  const minusQty = (product) => {
+    let i = cart.findIndex((e) => e.id === product.id);
+    if (cart[i].qty === 1) {
+      let tempCart = cart.filter((item, x) => x !== i);
+      setCart([...tempCart]);
+    } else {
+      let tempCart = cart;
+      tempCart[i].qty -= 1;
+      setCart([...tempCart]);
+    }
+  };
+
+  const clearBasket = () => {
+    setCart([]);
+  };
+
   useEffect(() => {
     localStorage.setItem("Cart", JSON.stringify(cart));
   });
@@ -35,12 +59,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout basket={cart} />}>
           <Route index element={<Home />} />
-          <Route path="/basket" element={<Basket basket={cart} />} />
+          <Route path="/basket" element={<Basket basket={cart} plusQty={plusQty} minusQty={minusQty} clearBasket={clearBasket} />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/popular" element={<Popular />} />
           <Route path="/genre/:genre" element={<Genre />} />
           <Route path="/movie/:movie" element={<Movie onAdd={onAdd} cart={cart} />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/termsofuse" element={<Terms />} />
         </Route>
       </Routes>
     </BrowserRouter>
