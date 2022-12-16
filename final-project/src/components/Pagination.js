@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 
 const Pagination = ({ list }) => {
-  const items = list.results;
+  const items = list;
   const [displayedItems, setDisplayedItems] = useState(items.slice(0, 8));
 
   const handleScroll = () => {
@@ -31,9 +31,7 @@ const Pagination = ({ list }) => {
               className="mx-auto"
             />
             <Card.Body>
-              <div className="card-title">
-                <h4>{item.title}</h4>
-              </div>
+              <h4>{item.title}</h4>
             </Card.Body>
           </Card>
         </Link>

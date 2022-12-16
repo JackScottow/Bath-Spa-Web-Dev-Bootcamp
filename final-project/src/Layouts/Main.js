@@ -6,7 +6,6 @@ const Layout = ({ basket }) => {
     <>
       <Navigation basket={basket} />
       <Outlet />
-      <Footer />
     </>
   );
 };

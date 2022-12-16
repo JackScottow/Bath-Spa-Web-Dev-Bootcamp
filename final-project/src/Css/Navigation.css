@@ -21,3 +21,11 @@
 .dropdown-menu {
   width: 100%;
 }
+
+.colorNav {
+  background-color: #212529;
+}
+
+.popover {
+  max-width: 100%;
+}

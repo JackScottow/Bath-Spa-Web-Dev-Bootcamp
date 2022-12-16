@@ -19,23 +19,16 @@ function Navigation({ basket }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-3" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="/" className="px-5">
+            <Nav.Link href="/" className="px-5" key="home">
               <FontAwesomeIcon icon={faHouseChimney} />
               &nbsp;Home
             </Nav.Link>
-            <NavDropdown
-              className="px-5"
-              bg="dark"
-              variant="dark"
-              href="/genres"
-              id="basic-nav-dropdown"
-              title={[<FontAwesomeIcon icon={faVideo} />, " Movies"]}
-            >
-              <NavDropdown.Item href="/popular" style={{ textAlign: "center" }}>
+            <NavDropdown className="px-5" bg="dark" variant="dark" href="/genres" id="basic-nav-dropdown" title={[<FontAwesomeIcon icon={faVideo} />, " Movies"]} key="dropdown">
+              <NavDropdown.Item href="/popular" style={{ textAlign: "center" }} key="popular">
                 Popular
               </NavDropdown.Item>
               {genreList.map((genre) => (
-                <NavDropdown.Item className="p-0" href={`/genre/${genre.name}`} style={{ height: "max-content", textAlign: "center" }} key={genre.id}>
+                <NavDropdown.Item className="p-0" href={`/genre/${genre.name}`} style={{ height: "max-content", textAlign: "center" }} key={genre.name}>
                   {genre.name}
                 </NavDropdown.Item>
               ))}
@@ -50,7 +43,7 @@ function Navigation({ basket }) {
                     {basket.length > 0
                       ? basket.map((item) => (
                           <div className="basket-popover">
-                            <div>{item.title}</div>
+                            <div>{item.title}</div>{" "}
                             <div>
                               £{item.price} x {item.qty}
                             </div>
@@ -62,12 +55,12 @@ function Navigation({ basket }) {
                 </Popover>
               }
             >
-              <Nav.Link className="px-5" href="/basket">
+              <Nav.Link className="px-5" href="/basket" key="basket">
                 <FontAwesomeIcon icon={faCartShopping} />
                 &nbsp; Basket {basketQty > 0 ? `[${basketQty} - £${basketPrice.toFixed(2)}]` : ""}
               </Nav.Link>
             </OverlayTrigger>
-            <Nav.Link className="px-5" href="/contact">
+            <Nav.Link className="px-5" href="/contact" key="contact">
               <FontAwesomeIcon icon={faEnvelope} />
               &nbsp; Contact
             </Nav.Link>

@@ -12,6 +12,8 @@ import Movie from "./components/Movie";
 import Basket from "./components/Basket";
 import Privacy from "./components/Privacy";
 import Terms from "./components/Terms";
+import Footer from "./components/Footer";
+import Checkout from "./components/Checkout";
 
 function App() {
   const [cart, setCart] = useState(localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")) : []);
@@ -66,8 +68,10 @@ function App() {
           <Route path="/movie/:movie" element={<Movie onAdd={onAdd} cart={cart} />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/termsofuse" element={<Terms />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

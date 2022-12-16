@@ -13,40 +13,44 @@ const Basket = ({ basket, plusQty, minusQty, clearBasket }) => {
     <div className="basket-container">
       {basket.length > 0
         ? basket.map((item, i) => (
-            <div className="basket-item" key={item.id}>
-              <p>
-                <img src={`https://www.themoviedb.org/t/p/w92${item.image}`} alt={item.title} />
-                <Link to={`/movie/${item.title.split(" ").join("")}`} key={item.id} state={item.id}>
+            <div className="basket-item shadow" key={item.id}>
+              <div className="basket-item-product-details">
+                <Link to={`/movie/${item.title.split(" ").join("")}`} key={item.id} state={item.id} className="basket-item-link">
+                  <img src={`https://www.themoviedb.org/t/p/w92${item.image}`} alt={item.title} />
                   {item.title} ({item.id})
                 </Link>
-              </p>
-              <p>
+              </div>
+              <div className="basket-item-cost">
                 Price £{item.price}
-                &nbsp;
-                <br />
-                <Button variant="danger" onClick={() => minusQty(item)}>
-                  -
-                </Button>
-                &nbsp;
-                <input type="text" value={item.qty} readonly className="qty" />
-                &nbsp;
-                <Button variant="success" onClick={() => plusQty(item)}>
-                  <div>+</div>
-                </Button>
-                <br />
+                <div className="basket-adjust">
+                  <Button variant="danger" onClick={() => minusQty(item)} className="basket-adjust-button">
+                    -
+                  </Button>
+                  <input type="text" value={item.qty} readonly className="qty" />
+                  <Button variant="success" onClick={() => plusQty(item)} className="basket-adjust-button">
+                    +
+                  </Button>
+                </div>
                 Total Cost: £{(item.qty * item.price).toFixed(2)}
-              </p>
+              </div>
             </div>
           ))
         : "Cart is empty"}
       {basket.length > 0 ? (
-        <Button variant="danger" onClick={() => clearBasket()} className="empty-basket">
-          Empty Basket
-        </Button>
+        <div className="basket-total shadow">
+          <Button variant="danger" onClick={() => clearBasket()} className="basket-button">
+            Empty Basket
+          </Button>
+          <Button href="/checkout" variant="success" className="basket-button" basket={basket}>
+            Proceed to Checkout
+          </Button>
+          <p>
+            Total : <span className="total-cost">£{(basketQty * 2.99).toFixed(2)}</span>
+          </p>
+        </div>
       ) : (
         ""
       )}
-      <p className="basket-total">Total : £{(basketQty * 2.99).toFixed(2)}</p>
     </div>
   );
 };
